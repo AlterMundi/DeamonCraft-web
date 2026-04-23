@@ -1,46 +1,18 @@
 ---
-const historias = [
-  {
-    id: 'mina',
-    titulo: 'La Mina Maldita',
-    pitch: 'Algo duerme debajo del pueblo. Los aldeanos no quieren bajar. Vos y tu daemon sí.',
-    edad: '8–12 años',
-    duracion: '2–3 sesiones',
-    dificultad: 'Media',
-    genero: 'Misterio · Aventura',
-    color: 'bg-[#6B4423]',
-    border: 'border-[#3A2414]',
-    accent: '#F5C542',
-  },
-  {
-    id: 'pueblo',
-    titulo: 'El Pueblo sin Memoria',
-    pitch: 'Todos los aldeanos olvidaron quiénes eran. Hay un diario enterrado que podría devolverles el pasado.',
-    edad: '10–14 años',
-    duracion: '3–5 sesiones',
-    dificultad: 'Media',
-    genero: 'Narrativa · Social',
-    color: 'bg-[#2E5D7B]',
-    border: 'border-[#1A3B52]',
-    accent: '#80EAFF',
-  },
-  {
-    id: 'carta',
-    titulo: 'La Carta del Aldeano',
-    pitch: 'Un aldeano te entrega una carta arrugada. Lleva un nombre, un mapa mal dibujado y una promesa.',
-    edad: '6–10 años',
-    duracion: '1 sesión',
-    dificultad: 'Suave',
-    genero: 'Introducción · Quest',
-    color: 'bg-[#7CAC50]',
-    border: 'border-[#5A7F3A]',
-    accent: '#FAF7F0',
-  },
+const hints = [
+  'un pueblo que olvidó su nombre',
+  'una mina encantada bajo el bosque',
+  'un dragón que sólo come remolachas',
+  'mi gato perdido en el Nether',
+  'un aldeano que escribe cartas al futuro',
+  'la torre del mago que nunca duerme',
+  'una isla donde los bloques se mueven de noche',
+  'el diario enterrado de mi bisabuela',
 ];
 ---
 
 <section id="rol-master" class="relative py-20 md:py-28 bg-void overflow-hidden">
-  <!-- Estrellas de fondo -->
+  <!-- Estrellas -->
   <div class="absolute inset-0 opacity-40 pointer-events-none" style="background-image: radial-gradient(circle at 15% 20%, #ffffff 1px, transparent 2px), radial-gradient(circle at 75% 40%, #ffffff 1px, transparent 2px), radial-gradient(circle at 45% 75%, #ffffff 1px, transparent 2px), radial-gradient(circle at 88% 85%, #ffffff 1px, transparent 2px), radial-gradient(circle at 22% 90%, #ffffff 1px, transparent 2px); background-size: 300px 300px;"></div>
   <!-- Glow dorado arriba -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] opacity-20 pointer-events-none" style="background: radial-gradient(ellipse at center top, #F5C542 0%, transparent 60%);"></div>
@@ -53,15 +25,15 @@ const historias = [
       </h2>
       <p class="font-sans text-cream/90 text-lg max-w-2xl mx-auto leading-relaxed">
         Activás el modo y cualquier SOUL se convierte en Game Master.
-        Elegís una historia. El Daemon la orquesta dentro de tu mundo:
+        Decís qué historia querés vivir. El Daemon la arma dentro de tu mundo:
         narra, presenta desafíos, adapta el terreno, te espera cuando te vas.
       </p>
     </div>
 
-    <!-- Cómo entra en el flujo: 3 pasos -->
-    <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-14">
+    <!-- Flujo de 3 pasos -->
+    <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
       {[
-        { n: '1', t: 'Elegís la historia', d: 'Cada una tiene edad objetivo, duración y tono.' },
+        { n: '1', t: 'Pedís una historia', d: 'Una frase alcanza. El Daemon la toma como semilla.' },
         { n: '2', t: 'El Daemon prepara el mundo', d: 'Coloca pistas, aldeanos con líneas, estructuras clave.' },
         { n: '3', t: 'Entrás al juego', d: 'Narra la escena, responde a tus decisiones, recuerda todo.' },
       ].map((s) => (
@@ -73,94 +45,35 @@ const historias = [
       ))}
     </div>
 
-    <!-- Grid de historias -->
-    <div class="mb-8 text-center">
-      <div class="inline-block bg-hermes text-ink font-display text-[10px] uppercase tracking-widest px-3 py-1.5 border-2 border-hermes-dark">
-        Historias disponibles
+    <!-- Prompt central + hints flotantes -->
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-6">
+        <div class="inline-block bg-hermes text-ink font-display text-[10px] uppercase tracking-widest px-3 py-1.5 border-2 border-hermes-dark">
+          Historias infinitas · generadas al momento
+        </div>
       </div>
-    </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-5xl mx-auto">
-      {historias.map((h) => (
-        <article class="mc-card group hover:-translate-y-1 transition-transform cursor-pointer">
-          <!-- Cover -->
-          <div class={`relative w-full aspect-[4/3] ${h.color} ${h.border} border-4 mb-4 overflow-hidden flex items-center justify-center`}>
-            <div class="absolute inset-0 opacity-25" style="background-image: linear-gradient(rgba(0,0,0,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.25) 1px, transparent 1px); background-size: 12px 12px;"></div>
-            <!-- Símbolo central -->
-            <svg viewBox="0 0 32 32" class="relative w-20 h-20" shape-rendering="crispEdges">
-              {h.id === 'mina' && (
-                <g fill={h.accent}>
-                  <!-- pico -->
-                  <rect x="8" y="6" width="2" height="2"/>
-                  <rect x="10" y="8" width="2" height="2"/>
-                  <rect x="12" y="10" width="2" height="2"/>
-                  <rect x="14" y="12" width="2" height="2"/>
-                  <rect x="16" y="14" width="2" height="2"/>
-                  <rect x="18" y="16" width="2" height="2"/>
-                  <rect x="20" y="18" width="2" height="2"/>
-                  <rect x="22" y="20" width="2" height="2"/>
-                  <!-- mango -->
-                  <rect x="6" y="4" width="4" height="2" fill="#B88860"/>
-                  <rect x="4" y="2" width="4" height="2" fill="#B88860"/>
-                </g>
-              )}
-              {h.id === 'pueblo' && (
-                <g fill={h.accent}>
-                  <!-- libro abierto -->
-                  <rect x="4" y="10" width="10" height="14"/>
-                  <rect x="18" y="10" width="10" height="14"/>
-                  <rect x="14" y="10" width="4" height="14" fill="#1A1E2E"/>
-                  <rect x="6" y="12" width="6" height="1" fill="#1A1E2E"/>
-                  <rect x="6" y="14" width="6" height="1" fill="#1A1E2E"/>
-                  <rect x="6" y="16" width="6" height="1" fill="#1A1E2E"/>
-                  <rect x="20" y="12" width="6" height="1" fill="#1A1E2E"/>
-                  <rect x="20" y="14" width="6" height="1" fill="#1A1E2E"/>
-                </g>
-              )}
-              {h.id === 'carta' && (
-                <g fill={h.accent}>
-                  <!-- sobre -->
-                  <rect x="4" y="8" width="24" height="16"/>
-                  <rect x="4" y="8" width="2" height="16" fill="#1A1E2E"/>
-                  <rect x="26" y="8" width="2" height="16" fill="#1A1E2E"/>
-                  <rect x="4" y="8" width="24" height="2" fill="#1A1E2E"/>
-                  <rect x="4" y="22" width="24" height="2" fill="#1A1E2E"/>
-                  <!-- sello central -->
-                  <rect x="14" y="14" width="4" height="4" fill="#B33A32"/>
-                </g>
-              )}
-            </svg>
-          </div>
+      <div class="relative bg-cream/5 border-4 border-cream/20 p-6 md:p-8 shadow-pixel">
+        <div class="font-mono text-[10px] uppercase tracking-widest text-hermes mb-3">Tu input</div>
+        <div class="font-serif text-xl md:text-2xl text-cream mb-5">
+          Quiero una historia sobre <span class="inline-block border-b-2 border-hermes text-hermes">________</span>
+        </div>
+        <div class="font-mono text-[10px] uppercase tracking-widest text-cream/50 mb-3">Algunos ejemplos</div>
+        <div class="flex flex-wrap gap-2">
+          {hints.map((h) => (
+            <span class="font-mono text-xs px-3 py-1.5 bg-cream/10 text-cream/80 border border-cream/20 hover:border-hermes/60 hover:text-hermes transition-colors">
+              {h}
+            </span>
+          ))}
+        </div>
+      </div>
 
-          <div class="font-mono text-[10px] uppercase tracking-widest text-hermes-dark mb-2">{h.genero}</div>
-          <div class="font-serif font-bold text-xl text-ink mb-2">{h.titulo}</div>
-          <p class="text-sm text-ink/80 leading-snug mb-4 italic">{h.pitch}</p>
-
-          <div class="grid grid-cols-3 gap-2 text-center pt-3 border-t-2 border-ink/10">
-            <div>
-              <div class="font-mono text-[9px] uppercase tracking-wider text-ink/50">Edad</div>
-              <div class="font-display text-[11px] text-ink">{h.edad}</div>
-            </div>
-            <div>
-              <div class="font-mono text-[9px] uppercase tracking-wider text-ink/50">Duración</div>
-              <div class="font-display text-[11px] text-ink">{h.duracion}</div>
-            </div>
-            <div>
-              <div class="font-mono text-[9px] uppercase tracking-wider text-ink/50">Dificultad</div>
-              <div class="font-display text-[11px] text-ink">{h.dificultad}</div>
-            </div>
-          </div>
-        </article>
-      ))}
-    </div>
-
-    <div class="text-center mt-12">
-      <p class="font-sans text-cream/80 max-w-xl mx-auto mb-5">
-        Cada historia es un guión vivo: el Daemon improvisa dentro del arco,
+      <p class="text-center mt-8 font-sans text-cream/80 max-w-xl mx-auto">
+        Cada historia es única. El Daemon improvisa dentro del arco,
         te recuerda entre sesiones y reporta al regreso qué pasó.
       </p>
-      <p class="font-mono text-[10px] uppercase tracking-widest text-hermes">
-        Modo disponible desde el tier Companion · Creator podrá escribir los suyos
+      <p class="text-center mt-3 font-mono text-[10px] uppercase tracking-widest text-hermes">
+        Modo disponible desde el tier Companion · Creator podrá compartir las suyas
       </p>
     </div>
   </div>

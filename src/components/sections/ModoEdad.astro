@@ -1,0 +1,89 @@
+---
+const niveles = [
+  {
+    edad: '6–8',
+    label: 'Asombro',
+    tono: 'Corto, directo, con nombre propio para las cosas.',
+    ejemplo: '¡Mirá! Una piedrita brillante. La guardamos y hacemos una varita.',
+    color: 'bg-grass',
+    border: 'border-grass-dark',
+  },
+  {
+    edad: '9–11',
+    label: 'Exploración',
+    tono: 'Cuenta el cómo y el por qué, invita a probar.',
+    ejemplo: 'Eso es obsidiana. Se forma cuando el agua cae sobre lava. Si juntás 10 bloques podemos construir un portal.',
+    color: 'bg-[#2E9CCA]',
+    border: 'border-[#1F6E90]',
+  },
+  {
+    edad: '12–14',
+    label: 'Autonomía',
+    tono: 'Datos concretos, trade-offs, te deja decidir.',
+    ejemplo: 'Para entrar al Nether necesitás un marco de 4×5 con obsidiana. Podés picarla con pico de diamante o derramar lava con cuidado.',
+    color: 'bg-hermes',
+    border: 'border-hermes-dark',
+  },
+  {
+    edad: '15+',
+    label: 'Co-creación',
+    tono: 'Habla de sistemas, te trata como par, discute estrategia.',
+    ejemplo: 'Si querés granja de ender pearls, el setup clásico abusa del spawn rate en el End. Hay trade-off entre rendimiento y detectabilidad en servers con anti-cheat.',
+    color: 'bg-[#8A4FC9]',
+    border: 'border-[#5E3089]',
+  },
+];
+---
+
+<section id="modo-edad" class="relative py-20 md:py-28 bg-gradient-to-b from-sky-deep via-sky to-sky-light">
+  <!-- Nubes pixel -->
+  <div class="absolute top-10 left-10 w-16 h-6 bg-white opacity-60" style="box-shadow: 16px 0 0 0 white, 32px 0 0 0 white, 0 6px 0 0 white, 16px 6px 0 0 white;"></div>
+  <div class="absolute top-20 right-20 w-12 h-4 bg-white opacity-70" style="box-shadow: 12px 0 0 0 white, 24px 0 0 0 white;"></div>
+
+  <div class="relative container-narrow">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="h-mini text-cream text-mc">04 / MODO</span>
+      <h2 class="h-display text-mc text-cream mt-3 mb-5">
+        Modo <span class="text-hermes">Edad</span>
+      </h2>
+      <p class="font-sans text-cream text-mc text-lg max-w-2xl mx-auto leading-relaxed">
+        Elegís el nivel y el Daemon adapta vocabulario, ritmo y complejidad.
+        Crece con el chico. Sirve para que padre y pibe aprendan juntos sin
+        que ninguno de los dos se aburra.
+      </p>
+    </div>
+
+    <!-- Slider visual de niveles -->
+    <div class="max-w-5xl mx-auto mb-12">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {niveles.map((n, i) => (
+          <article class="mc-card group hover:-translate-y-1 transition-transform">
+            <div class={`relative w-full aspect-[5/3] ${n.color} ${n.border} border-4 mb-4 overflow-hidden flex items-center justify-center`}>
+              <div class="absolute inset-0 opacity-25" style="background-image: linear-gradient(rgba(0,0,0,0.25) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.25) 1px, transparent 1px); background-size: 10px 10px;"></div>
+              <div class="relative text-center">
+                <div class="font-display text-4xl md:text-5xl text-cream drop-shadow-[0_2px_0_rgba(0,0,0,0.5)]">{n.edad}</div>
+                <div class="font-mono text-[10px] uppercase tracking-widest text-cream/90 mt-1">años</div>
+              </div>
+            </div>
+
+            <div class="font-mono text-[10px] uppercase tracking-widest text-hermes-dark mb-1">Nivel {i + 1}</div>
+            <div class="font-serif font-bold text-xl text-ink mb-2">{n.label}</div>
+            <p class="font-sans text-sm text-ink/70 italic mb-3 leading-snug">{n.tono}</p>
+            <div class="bg-ink/5 border-l-4 border-hermes p-3">
+              <div class="font-mono text-[9px] uppercase tracking-widest text-ink/50 mb-1">Así suena</div>
+              <div class="font-sans text-sm text-ink leading-snug">"{n.ejemplo}"</div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-sans text-cream text-mc leading-relaxed bg-ink/30 border-2 border-ink/50 p-5 shadow-pixel">
+        No hay modo infantil ni modo avanzado. Hay <strong class="text-hermes">tu modo ahora</strong>,
+        y el Daemon sube un escalón cuando vos estás listo.
+        Padres y pibes pueden compartir el mismo Daemon con perfiles distintos.
+      </p>
+    </div>
+  </div>
+</section>
