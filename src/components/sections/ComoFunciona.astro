@@ -1,10 +1,10 @@
 ---
 const steps = [
-  { n: '1', time: '0s',  action: 'Abrí hermescraft.ai',           response: 'Elegís un preset y le ponés nombre' },
+  { n: '1', time: '0s',  action: 'Abrí daemoncraft.ai',           response: 'Elegís un preset y le ponés nombre' },
   { n: '2', time: '8s',  action: 'Preview del SOUL',              response: 'Ves las skills y la personalidad' },
   { n: '3', time: '15s', action: 'Elegís el mundo',               response: 'Tu server o uno de los nuestros' },
-  { n: '4', time: '22s', action: 'Agregás el bot a Telegram',     response: 'Primer "hola" de tu Hermes' },
-  { n: '5', time: '30s', action: '"Hi Hermes, build with me"',    response: 'Aparece al lado tuyo. Empiezan a jugar.' },
+  { n: '4', time: '22s', action: 'Agregás el bot a Telegram',     response: 'Primer "hola" de tu Daemon' },
+  { n: '5', time: '30s', action: '"Hi Daemon, build with me"',    response: 'Aparece al lado tuyo. Empiezan a jugar.' },
 ];
 
 import fs from 'node:fs';
@@ -35,13 +35,13 @@ const capabilities = capabilitiesRaw.map((c) => ({ ...c, img: resolveImg(c.id) }
 
   <div class="container-narrow relative">
     <div class="max-w-3xl mb-14">
-      <span class="h-mini text-hermes-dark">02 / Cómo funciona</span>
+      <span class="h-mini text-daemon-dark">02 / Cómo funciona</span>
       <h2 class="h-display text-ink mt-3 mb-5">
-        En <span class="text-hermes-dark">30 segundos</span> lo tenés jugando.
+        En <span class="text-daemon-dark">30 segundos</span> lo tenés jugando.
       </h2>
       <p class="text-ink/80 text-lg leading-relaxed">
         No hay que instalar mods, ni configurar servidores raros.
-        Tu Hermes vive en la nube, se conecta a tu Minecraft y aparece como un amigo más.
+        Tu Daemon vive en la nube, se conecta a tu Minecraft y aparece como un amigo más.
       </p>
     </div>
 
@@ -52,7 +52,7 @@ const capabilities = capabilitiesRaw.map((c) => ({ ...c, img: resolveImg(c.id) }
       <div class="grid md:grid-cols-5 gap-4 md:gap-2 relative">
         {steps.map((s) => (
           <div class="text-center">
-            <div class="relative w-20 h-20 mx-auto mb-4 bg-hermes border-4 border-hermes-dark flex items-center justify-center shadow-pixel-lg">
+            <div class="relative w-20 h-20 mx-auto mb-4 bg-daemon border-4 border-daemon-dark flex items-center justify-center shadow-pixel-lg">
               <span class="font-display text-3xl text-ink">{s.n}</span>
               <span class="absolute -top-2 -right-2 entity-tag">{s.time}</span>
             </div>

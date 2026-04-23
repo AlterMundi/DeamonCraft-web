@@ -14,7 +14,7 @@ const PRESETS = {
     icon: 'axe',
   },
   maria: {
-    skin: '#EBCFAC', hair: '#6B3F20', cloth1: '#2E9CCA', cloth2: '#F5C542', accent: '#ffffff',
+    skin: '#EBCFAC', hair: '#6B3F20', cloth1: '#2E9CCA', cloth2: '#FF5722', accent: '#ffffff',
     name: 'Maria',
     role: 'Architect',
     personality: 'Creativa, perfeccionista',
@@ -23,7 +23,7 @@ const PRESETS = {
     icon: 'blueprint',
   },
   luna: {
-    skin: '#E4BFA3', hair: '#1A1E2E', cloth1: '#8A4FC9', cloth2: '#F5C542', accent: '#B89AD9',
+    skin: '#E4BFA3', hair: '#1A1E2E', cloth1: '#8A4FC9', cloth2: '#FF5722', accent: '#B89AD9',
     name: 'Luna',
     role: 'Tutor',
     personality: 'Paciente, alentadora',
@@ -32,7 +32,7 @@ const PRESETS = {
     icon: 'book',
   },
   kai: {
-    skin: '#C79B6E', hair: '#2A1A0E', cloth1: '#8A8A8A', cloth2: '#1A1E2E', accent: '#C79A1E',
+    skin: '#C79B6E', hair: '#2A1A0E', cloth1: '#8A8A8A', cloth2: '#1A1E2E', accent: '#E64A19',
     name: 'Kai',
     role: 'Fighter',
     personality: 'Táctico, protector',
@@ -55,7 +55,7 @@ const p = PRESETS[preset];
   <!-- Cara -->
   <rect x="3" y="4" width="10" height="8" fill={p.skin}/>
 
-  <!-- Casco alado dorado (solo lo tienen todos como seña de ser un "Hermes profile") -->
+  <!-- Casco alado dorado (solo lo tienen todos como seña de ser un "Daemon profile") -->
   <rect x="3" y="3" width="10" height="2" fill={p.cloth2}/>
   <rect x="2" y="4" width="1"  height="1" fill={p.cloth2}/>
   <rect x="13" y="4" width="1" height="1" fill={p.cloth2}/>
@@ -91,8 +91,8 @@ const p = PRESETS[preset];
   {preset === 'maria' && (
     <Fragment>
       <!-- casco/gorra constructor -->
-      <rect x="4" y="0" width="8" height="2" fill="#F5C542"/>
-      <rect x="5" y="-1" width="6" height="1" fill="#F5C542"/>
+      <rect x="4" y="0" width="8" height="2" fill="#FF5722"/>
+      <rect x="5" y="-1" width="6" height="1" fill="#FF5722"/>
     </Fragment>
   )}
   {preset === 'luna' && (

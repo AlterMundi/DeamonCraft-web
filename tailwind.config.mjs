@@ -4,21 +4,39 @@ export default {
   theme: {
     extend: {
       colors: {
-        // === Minecraft daytime palette ===
+        // === Daemon Core palette ===
+        daemon: {
+          DEFAULT: '#FF5722',   // naranja fuego — acento principal
+          light: '#FF8A65',
+          dark: '#E64A19',
+          glow: 'rgba(255,87,34,0.4)',
+        },
+        cyan: {
+          DEFAULT: '#00E5FF',   // acento tech/secundario
+          light: '#80EAFF',
+          dark: '#00B8D4',
+          glow: 'rgba(0,229,255,0.3)',
+        },
+        void: {
+          DEFAULT: '#0B0C15',   // fondo principal
+          light: '#151725',     // superficie
+          deep: '#05060A',      // fondo profundo
+        },
+        // Minecraft daytime palette (mantenido para compatibilidad visual MC)
         sky: {
-          light: '#A4D9F7',    // horizonte claro
-          DEFAULT: '#7EC0EE',  // cielo medio Minecraft
-          deep: '#4FA3D6',     // cielo alto
+          light: '#A4D9F7',
+          DEFAULT: '#7EC0EE',
+          deep: '#4FA3D6',
         },
         grass: {
           light: '#94C95C',
-          DEFAULT: '#7CAC50',  // grass block top
+          DEFAULT: '#7CAC50',
           dark: '#5A7F3A',
-          side: '#8FA352',     // grass block side
+          side: '#8FA352',
         },
         dirt: {
           light: '#A88255',
-          DEFAULT: '#8B5A3C',  // dirt block
+          DEFAULT: '#8B5A3C',
           dark: '#6B4423',
         },
         stone: {
@@ -28,23 +46,22 @@ export default {
         },
         wood: {
           light: '#C8A165',
-          DEFAULT: '#9E6B3D',  // oak log
+          DEFAULT: '#9E6B3D',
           dark: '#6B4423',
         },
         cloud: '#FFFFFF',
-        // Dorado Hermes — acento secundario
+        // Legacy compat (hermes -> daemon alias)
         hermes: {
-          DEFAULT: '#F5C542',
-          light: '#FCDC6E',
-          dark: '#C79A1E',
+          DEFAULT: '#FF5722',
+          light: '#FF8A65',
+          dark: '#E64A19',
         },
-        // Navy/cream quedan pero secundarios
         night: {
-          DEFAULT: '#1A1E2E',
-          deep: '#0E1220',
+          DEFAULT: '#0B0C15',
+          deep: '#05060A',
         },
-        cream: '#FAF7F0',
-        ink: '#1F2933',         // texto principal sobre cream
+        cream: '#E8E8ED',
+        ink: '#1F2933',
       },
       fontFamily: {
         display: ['"Press Start 2P"', 'monospace'],
@@ -56,8 +73,10 @@ export default {
         'pixel': '4px 4px 0 0 rgba(0,0,0,0.25)',
         'pixel-lg': '6px 6px 0 0 rgba(0,0,0,0.3)',
         'block': 'inset 0 -4px 0 0 rgba(0,0,0,0.25), inset 0 4px 0 0 rgba(255,255,255,0.25)',
-        'block-gold': 'inset 0 -4px 0 0 #C79A1E, inset 0 4px 0 0 #FCDC6E',
+        'block-daemon': 'inset 0 -4px 0 0 #E64A19, inset 0 4px 0 0 #FF8A65',
         'block-grass': 'inset 0 -4px 0 0 #5A7F3A, inset 0 4px 0 0 #94C95C',
+        'glow-daemon': '0 0 20px rgba(255,87,34,0.3)',
+        'glow-cyan': '0 0 20px rgba(0,229,255,0.3)',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -66,6 +85,8 @@ export default {
         'cloud-drift-slow': 'cloud-drift 90s linear infinite',
         'sway': 'sway 4s ease-in-out infinite',
         'bob': 'bob 2s ease-in-out infinite',
+        'pulse-daemon': 'pulse-daemon 2s ease-in-out infinite',
+        'flicker': 'flicker 3s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -83,6 +104,15 @@ export default {
         sway: {
           '0%, 100%': { transform: 'rotate(-2deg)' },
           '50%': { transform: 'rotate(2deg)' },
+        },
+        'pulse-daemon': {
+          '0%, 100%': { boxShadow: '0 0 5px rgba(255,87,34,0.2)' },
+          '50%': { boxShadow: '0 0 25px rgba(255,87,34,0.6)' },
+        },
+        flicker: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.85' },
+          '75%': { opacity: '0.95' },
         },
       },
     },
