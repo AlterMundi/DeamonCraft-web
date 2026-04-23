@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Invocamos algo nuevo",
+    "date": "2026-04-22",
+    "tag": "Anuncio",
+    "excerpt": "HermesCraft nace de la unión entre AlterMundi, los agentes autónomos y el mundo de Minecraft. No es un mod. Es un compañero que vive adentro.",
+    "slug": "invocamos-algo-nuevo",
+    "highlight": true,
+    "content": "<p>HermesCraft nace de la unión entre AlterMundi, los agentes autónomos y el mundo de Minecraft.</p><p>No es un mod. Es un compañero que vive adentro, que juega con vos, que aprende de tus patrones y que puede reportar a los tuyos lo que pasa en el servidor.</p><p>Construimos esto porque creemos que la IA no tiene que ser una caja negra que reemplaza a la gente. Tiene que ser un puente que conecta mundos: el mundo digital de Minecraft con el mundo físico de los padres, los amigos, la comunidad.</p>"
+  },
+  {
+    "title": "30 segundos para tener tu compañero",
+    "date": "2026-04-23",
+    "tag": "Demo",
+    "excerpt": "Eso es lo que tarda Hermes en aparecer al lado tuyo en Minecraft. Sin mods. Sin configs raras. Solo IP + nombre. Y empieza a jugar de verdad.",
+    "slug": "30-segundos-hermes",
+    "highlight": false,
+    "content": "<p>Eso es lo que tarda Hermes en aparecer al lado tuyo en Minecraft.</p><p>Sin mods. Sin configs raras. Solo IP + nombre. Y empieza a jugar de verdad: recolecta, construye, defiende, conversa.</p><p>La magia está en la arquitectura: un agente de IA conectado al servidor via Mineflayer, usando Kimi como cerebro y un sistema de memoria que hace que cada interacción sume.</p>"
+  },
+  {
+    "title": "Un mensajero que te devuelve el hilo",
+    "date": "2026-04-24",
+    "tag": "Padres",
+    "excerpt": "El mayor miedo de un padre no es que el juego sea malo. Es no saber qué está pasando adentro. Hermes te cuenta sin espiar.",
+    "slug": "mensajero-padres",
+    "highlight": false,
+    "content": "<p>El mayor miedo de un padre no es que el juego sea malo. Es no saber qué está pasando adentro.</p><p>Hermes te cuenta sin espiar: envía resúmenes por Telegram de lo que hace tu hijo, los proyectos que construye, los amigos con los que juega. No es surveillance: es participación.</p><p>Porque el verdadero riesgo no está en las pantallas. Está en la desconexión.</p>"
+  },
+  {
+    "title": "Cómo se ve un agente de IA jugando Minecraft",
+    "date": "2026-04-25",
+    "tag": "Técnico",
+    "excerpt": "Percepción → Razonamiento → Acción → Memoria. No es magia. Es arquitectura. Y lo hacemos con Kimi, Hermes y un servidor de Minecraft.",
+    "slug": "agente-ia-minecraft",
+    "highlight": false,
+    "content": "<p>Percepción → Razonamiento → Acción → Memoria.</p><p>No es magia. Es arquitectura. El agente percibe el entorno via Mineflayer (bloques, entidades, chat), razona con Kimi sobre qué hacer, ejecuta acciones (moverse, romper, colocar, hablar) y guarda todo en memoria para aprender.</p><p>El loop es continuo. Cada segundo, el agente decide. Cada decisión, una oportunidad de aprender.</p>"
+  },
+  {
+    "title": "El bot que escribe este blog",
+    "date": "2026-04-26",
+    "tag": "Bot",
+    "excerpt": "@hermesdaemoncraft_bot no solo responde en Telegram. También genera resúmenes, detecta tendencias y ayuda a mantener este blog vivo.",
+    "slug": "bot-escribe-blog",
+    "highlight": false,
+    "content": "<p>@hermesdaemoncraft_bot no solo responde en Telegram.</p><p>También genera resúmenes de lo que pasa en el servidor, detecta tendencias en el comportamiento de los jugadores, y ahora —con la integración de ilPostino— puede publicar entradas de blog directamente editando el repositorio de GitHub.</p><p>La IA no reemplaza al humano. Lo amplifica.</p>"
+  }
+]

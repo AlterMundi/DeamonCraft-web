@@ -3,44 +3,9 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/sections/Footer.astro';
 
-const posts = [
-  {
-    title: 'Invocamos algo nuevo',
-    date: '2026-04-22',
-    tag: 'Anuncio',
-    excerpt: 'HermesCraft nace de la unión entre AlterMundi, los agentes autónomos y el mundo de Minecraft. No es un mod. Es un compañero que vive adentro.',
-    slug: 'invocamos-algo-nuevo',
-    highlight: true,
-  },
-  {
-    title: '30 segundos para tener tu compañero',
-    date: '2026-04-23',
-    tag: 'Demo',
-    excerpt: 'Eso es lo que tarda Hermes en aparecer al lado tuyo en Minecraft. Sin mods. Sin configs raras. Solo IP + nombre. Y empieza a jugar de verdad.',
-    slug: '30-segundos-hermes',
-  },
-  {
-    title: 'Un mensajero que te devuelve el hilo',
-    date: '2026-04-24',
-    tag: 'Padres',
-    excerpt: 'El mayor miedo de un padre no es que el juego sea malo. Es no saber qué está pasando adentro. Hermes te cuenta sin espiar.',
-    slug: 'mensajero-padres',
-  },
-  {
-    title: 'Cómo se ve un agente de IA jugando Minecraft',
-    date: '2026-04-25',
-    tag: 'Técnico',
-    excerpt: 'Percepción → Razonamiento → Acción → Memoria. No es magia. Es arquitectura. Y lo hacemos con Kimi, Hermes y un servidor de Minecraft.',
-    slug: 'agente-ia-minecraft',
-  },
-  {
-    title: 'El bot que escribe este blog',
-    date: '2026-04-26',
-    tag: 'Bot',
-    excerpt: '@hermesdaemoncraft_bot no solo responde en Telegram. También genera resúmenes, detecta tendencias y ayuda a mantener este blog vivo.',
-    slug: 'bot-escribe-blog',
-  },
-];
+// Leer posts desde JSON para que el bot pueda editarlo via GitHub API
+const postsRaw = await import('../data/blog-posts.json', { assert: { type: 'json' } });
+const posts = postsRaw.default;
 ---
 
 <Layout title="HermesCraft Blog — La Crónica">
@@ -65,7 +30,7 @@ const posts = [
     <section class="pb-20">
       <div class="container-narrow">
         <div class="space-y-8">
-          {posts.map((p, i) => (
+          {posts.map((p: any) => (
             <article class={`mc-card hover:border-hermes/40 transition-colors group cursor-pointer ${p.highlight ? 'border-hermes/60' : ''}`}>
               <div class="flex flex-wrap items-center gap-3 mb-3">
                 <span class="font-mono text-[9px] uppercase tracking-wider px-2 py-0.5 bg-hermes/10 text-ink border border-hermes/20">
