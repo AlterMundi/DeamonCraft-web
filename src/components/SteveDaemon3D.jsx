@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export default function SteveHermes3D({ skinUrl = '/skin-hermes.png', height = 480 }) {
+export default function SteveDaemon3D({ skinUrl = '/skin-daemon.png', height = 480 }) {
   const canvasRef = useRef(null);
   const viewerRef = useRef(null);
 
@@ -32,11 +32,11 @@ export default function SteveHermes3D({ skinUrl = '/skin-hermes.png', height = 4
       idle.speed = 0.5;
       viewer.animation = idle;
 
-      // Subtle gold-ish ambient
+      // Subtle daemon glow ambient
       viewer.globalLight.intensity = 3;
       viewer.cameraLight.intensity = 0.6;
 
-      // Transparent bg so the Navy section shows through
+      // Transparent bg so the void section shows through
       viewer.renderer.setClearColor(0x000000, 0);
 
       // Resize handler
@@ -61,12 +61,12 @@ export default function SteveHermes3D({ skinUrl = '/skin-hermes.png', height = 4
 
   return (
     <div className="relative w-full flex items-center justify-center">
-      {/* halo dorado detrás */}
+      {/* halo daemon detrás */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(circle at 50% 55%, rgba(201,168,76,0.25) 0%, rgba(201,168,76,0.08) 30%, transparent 60%)',
+            'radial-gradient(circle at 50% 55%, rgba(255,87,34,0.25) 0%, rgba(255,87,34,0.08) 30%, transparent 60%)',
           filter: 'blur(30px)',
         }}
       />

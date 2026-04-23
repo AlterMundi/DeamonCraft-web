@@ -10,10 +10,10 @@ const { href = '#crowdfunding' } = Astro.props;
   <div class="relative container-narrow">
     <div class="max-w-4xl mx-auto text-center mb-12">
       <div class="inline-block mb-5">
-        <div class="entity-tag text-lg">HERMESCRAFT · SEED ROUND</div>
+        <div class="entity-tag text-lg">DAEMONCRAFT · SEED ROUND</div>
       </div>
       <h2 class="h-display text-mc text-cream mb-6">
-        Estamos armando <span class="text-hermes">la primera camada</span> de familias.
+        Estamos armando <span class="text-daemon">la primera camada</span> de familias.
       </h2>
       <p class="font-sans text-cream text-mc text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
         18 meses de runway. 12.000 usuarios. 500+ agentes en vivo.
@@ -31,14 +31,14 @@ const { href = '#crowdfunding' } = Astro.props;
         { metric: '500+', label: 'Agentes M6' },
       ].map((m) => (
         <div class="bg-cream border-4 border-ink p-4 text-center" style="box-shadow: inset 0 -3px 0 0 rgba(0,0,0,0.2), inset 0 3px 0 0 rgba(255,255,255,0.5), 4px 4px 0 0 rgba(0,0,0,0.3);">
-          <div class="font-display text-2xl md:text-3xl text-hermes-dark mb-1">{m.metric}</div>
+          <div class="font-display text-2xl md:text-3xl text-daemon-dark mb-1">{m.metric}</div>
           <div class="font-mono text-[10px] uppercase tracking-widest text-ink/60">{m.label}</div>
         </div>
       ))}
     </div>
 
     <!-- Big CTA block -->
-    <div class="max-w-3xl mx-auto bg-hermes border-4 border-hermes-dark p-8 md:p-10 text-center" style="box-shadow: inset 0 -4px 0 0 rgba(0,0,0,0.2), inset 0 4px 0 0 rgba(255,255,255,0.4), 8px 8px 0 0 rgba(0,0,0,0.4);">
+    <div class="max-w-3xl mx-auto bg-daemon border-4 border-daemon-dark p-8 md:p-10 text-center" style="box-shadow: inset 0 -4px 0 0 rgba(0,0,0,0.2), inset 0 4px 0 0 rgba(255,255,255,0.4), 8px 8px 0 0 rgba(0,0,0,0.4);">
       <div class="font-display text-[10px] text-ink mb-3 tracking-widest">PRÓXIMO PASO</div>
       <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 leading-snug">
         45 minutos. Demo en vivo con agentes reales, Telegram bridge y portal entre mundos.
@@ -46,12 +46,12 @@ const { href = '#crowdfunding' } = Astro.props;
       <p class="text-ink/80 mb-6">
         Si sos inversor, escuela o familia founder — agendamos la demo esta semana.
       </p>
-      <a href="mailto:nicoechaniz@hermescraft.ai?subject=Demo%20HermesCraft%20Seed"
+      <a href="mailto:nicoechaniz@daemoncraft.ai?subject=Demo%20DaemonCraft%20Seed"
          class="btn-mc btn-mc-wood !text-sm !px-8 !py-4">
         Agendar demo de 45 min →
       </a>
       <div class="mt-5 font-mono text-xs text-ink/60">
-        Nicolás Echániz · nicoechaniz@hermescraft.ai · @nicoechaniz
+        Nicolás Echániz · nicoechaniz@daemoncraft.ai · @nicoechaniz
       </div>
     </div>
 
