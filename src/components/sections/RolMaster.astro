@@ -30,21 +30,6 @@ const hints = [
       </p>
     </div>
 
-    <!-- Flujo de 3 pasos -->
-    <div class="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16">
-      {[
-        { n: '1', t: 'Pedís una historia', d: 'Una frase alcanza. El Daemon la toma como semilla.' },
-        { n: '2', t: 'El Daemon prepara el mundo', d: 'Coloca pistas, aldeanos con líneas, estructuras clave.' },
-        { n: '3', t: 'Entrás al juego', d: 'Narra la escena, responde a tus decisiones, recuerda todo.' },
-      ].map((s) => (
-        <div class="bg-cream/5 border-2 border-cream/10 p-5">
-          <div class="font-display text-3xl text-hermes mb-2">{s.n}</div>
-          <div class="font-serif font-bold text-cream text-lg mb-1">{s.t}</div>
-          <div class="font-sans text-sm text-cream/70 leading-relaxed">{s.d}</div>
-        </div>
-      ))}
-    </div>
-
     <!-- Prompt central + hints flotantes -->
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-6">
