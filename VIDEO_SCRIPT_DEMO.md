@@ -1,119 +1,123 @@
-# DaemonCraft — Video Script Demo (60 segundos)
+# DaemonCraft — Video Script Demo
 
-> Formato: Vertical 9:16 (TikTok/Reels/Shorts)
-> Resolución: 1080x1920
-> Audio: Música ambient electrónica + SFX Minecraft
-> Voiceover: voz adulta, tranquila, misteriosa pero cálida
-
----
-
-## FRAME 0 (0:00 – 0:03)
-**Visual**: Fondo negro. Texto blanco centrado.
-**Texto en pantalla**: "Mi hijo juega Minecraft 3 horas por día."
-**Audio**: Silencio. Solo un leve hum.
+> **Autor:** AlterMundi · Abril 2026
+> **Formato principal:** Vertical 9:16 · 1080×1920 · 30fps o 60fps
+> **Duración:** 30 s (master). Cortes a 15 s (ads) y 60 s (YouTube / sitio).
+> **Distribución:** TikTok · Reels · YouTube Shorts · web daemoncraft.ai
 
 ---
 
-## FRAME 1 (0:03 – 0:06)
-**Visual**: Misma estética. Segunda línea aparece debajo.
-**Texto en pantalla**: "Y por primera vez, sé qué está haciendo."
-**Audio**: Primer acorde de música ambient.
+## Principios de dirección
+
+Basado en lo que viene funcionando en Shorts/TikTok para audiencias de gaming y padres tech (2026):
+
+- **Hook duro en los primeros 3 segundos.** Un solo plano, una sola frase, un solo gancho visual. Si no retiene el primer frame, el resto no existe.
+- **Retención > duración.** 15–35 s es el sweet spot; 30 s alcanza para el arco completo sin perder retention.
+- **Gameplay real primero.** Audiencias de Minecraft detectan pantalla falsa. Grabamos gameplay vivo, 1080p, modo tercera persona detrás del jugador.
+- **SFX Minecraft nativo.** Pasos sobre pasto, placement de bloques, notificación de chat, creeper lejano. Es el idioma de la plataforma.
+- **Texto en pantalla redundante con voice-over.** 80% del tráfico ve sin audio. Captions grandes, fuente Monocraft o Press Start 2P.
+- **Cierre con próxima acción clara.** Logo + dominio + un solo verbo (*invocá*, *probá*, *seguí*).
 
 ---
 
-## FRAME 2 (0:06 – 0:10)
-**Visual**: Transición rápida. Pantalla de Minecraft. Vista desde atrás de un personaje niño.
-**Voiceover**: "Conocé a Daemon."
-**Audio**: Sonido de pasos sobre pasto de Minecraft.
+## FRAME A · HOOK (0:00 – 0:03)
+
+- **Visual:** gameplay Minecraft, tercera persona detrás del personaje del hijo. De golpe, a su lado, aparece el daemon con glow dorado + cyan. Name tag flotante: **Daemon**.
+- **Texto en pantalla:** `MI HIJO NO JUEGA SOLO.`
+- **Voiceover:** silencio.
+- **SFX:** teleport suave + shimmer + un golpe de bajo.
 
 ---
 
-## FRAME 3 (0:10 – 0:15)
-**Visual**: Aparece Daemon al lado del personaje. Name tag flotante: "Daemon". Skin distintivo (naranja/cyan).
-**Voiceover**: "Un agente de inteligencia artificial que habita tu servidor."
-**Audio**: Sonido de aparición (teleport suave + glow).
+## FRAME B · PRESENCIA (0:03 – 0:08)
+
+- **Visual:** plano lateral. El hijo mira al daemon. El daemon hace un pequeño nod. El name tag brilla.
+- **Texto en pantalla:** `Un daemon vive en su servidor.`
+- **Voiceover:** *"Un daemon vive en su servidor. Juega con él. Aprende con él."*
+- **SFX:** música ambient entra suave (sintetizador cálido), pasos sobre pasto.
 
 ---
 
-## FRAME 4 (0:15 – 0:22)
-**Visual**: Montaje rápido:
-- Daemon minando junto al niño (0:15)
-- Daemon construyendo un muro (0:17)
-- Daemon peleando un creeper, protegiendo al niño (0:19)
-- Daemon y el niño charlando (burbujas de chat flotantes) (0:21)
-**Voiceover**: "Juega. Construye. Protege. Conversa."
-**Audio**: SFX de minado, colocación de bloques, explosión de creeper lejana, chat pop.
+## FRAME C · MONTAJE (0:08 – 0:18)
+
+Cuatro planos breves, ~2.5 s cada uno. Todo gameplay real.
+
+1. **Minar juntos** — los dos pican piedra en una veta. Ding de experiencia.
+2. **Construir** — el daemon coloca bloques en simetría mientras el hijo observa.
+3. **Proteger** — un creeper se acerca de noche, el daemon se interpone.
+4. **Conversar** — chat pop-up: el hijo escribe, el daemon responde una línea.
+
+- **Texto en pantalla:** `Mina · Construye · Protege · Conversa.`
+- **Voiceover:** *"Mina. Construye. Protege. Conversa."* (una palabra por plano, sincronizada con el corte).
+- **SFX:** minado, placement de bloque, hiss de creeper, chat pop.
 
 ---
 
-## FRAME 5 (0:22 – 0:28)
-**Visual**: Pantalla se divide. Izquierda: gameplay. Derecha: interfaz de Telegram.
-En Telegram aparecen mensajes de Daemon:
-"Valentín terminó el Coliseo esta tarde 🏛️"
-"Mostró persistencia cuando un creeper rompió la base."
-**Voiceover**: "Y todos los domingos, me cuenta cómo estuvo."
-**Audio**: Sonido de notificación Telegram.
+## FRAME D · EL PUENTE (0:18 – 0:24)
+
+- **Visual:** split screen. Izquierda sigue el gameplay. Derecha, interfaz de Telegram. Entra mensaje del bot:
+
+  > *"Valen terminó el Coliseo. Aguantó un ataque de creeper sin perder la casa."*
+
+- **Texto en pantalla:** `El domingo me cuenta cómo estuvo.`
+- **Voiceover:** *"Y el domingo me cuenta cómo estuvo."*
+- **SFX:** notificación Telegram.
 
 ---
 
-## FRAME 6 (0:28 – 0:35)
-**Visual**: Vuelve a pantalla completa de Minecraft. Noche. Estrellas. Daemon y el niño sentados en un mirador.
-**Voiceover**: "No es un bot que llamás. Es una entidad que ya está ahí."
-**Audio**: Música sube levemente. Sonidos nocturnos de Minecraft.
+## FRAME E · CIERRE (0:24 – 0:30)
+
+- **Visual:** fade a noche de Minecraft. Luna pixelada. Logo **DaemonCraft** con glow dorado aparece centrado. Debajo, línea de texto.
+- **Texto en pantalla:**
+
+  ```
+  daemoncraft.ai
+  invocá tu daemon
+  ```
+
+- **Voiceover:** *"DaemonCraft. Un daemon vive en tu servidor."*
+- **SFX:** último acorde ambient. Al final, el sonido característico de orb de experiencia.
+- **Firma en esquina inferior:** `AlterMundi · 2026`.
 
 ---
 
-## FRAME 7 (0:35 – 0:42)
-**Visual**: Fade a negro. Aparece el logo DaemonCraft con glow naranja.
-**Texto en pantalla**:
-"500+ daemons activos"
-"Desde $0"
-"Java · Bedrock"
-**Voiceover**: "500 familias ya invocaron su daemon. Empezá gratis."
-**Audio**: Música llega a climax sutil.
+## Variantes
+
+### 15 s (paid ads · feed)
+Frames **A → C (2 planos: construir + proteger) → E**. Misma música, mismo cierre. Sin frame D.
+
+### 60 s (YouTube / web)
+Frames 0–E + tres insertos extra:
+- **Antes de A:** text card negro 2 s con pregunta de padre: *"¿Sabés qué hace cuando se encierra a jugar?"*.
+- **Entre C y D:** 5 s de memoria del daemon (inventario + cuaderno de notas del agente).
+- **Post E:** 8 s con tres chips (`500 familias` · `Java & Bedrock` · `Desde $0`) y CTA secundario *"Seguinos en @daemoncraft"*.
 
 ---
 
-## FRAME 8 (0:42 – 0:50)
-**Visual**: Screenshots rápidos de reportes, testimonios, construcciones.
-**Texto en pantalla**:
-"¿Sabés qué hace tu hijo cuando juega?"
-**Voiceover**: "Ahora podés saberlo. Sin espiar. Sin invadir."
-**Audio**: Glitch sutil. Transición a silencio.
+## Recursos de producción
+
+- [ ] Gameplay Minecraft grabado a 1080p · 60fps · tercera persona · sin HUD en mayor parte (limpio).
+- [ ] **Skin Daemon** — paleta cyan + dorado, estética tech-pixel. Prompt en `SKIN_DAEMON_PROMPT.md`.
+- [ ] Mockup Telegram — usar capturas reales del bot conectado al servidor de pruebas.
+- [ ] Logo animado DaemonCraft con pulso dorado (SVG + After Effects / Lottie).
+- [ ] Música royalty-free, ambient cálido, 80–95 BPM (Epidemic Sound / Artlist).
+- [ ] Voiceover en español rioplatense, tono adulto-cálido, **una sola toma** (ElevenLabs v3 o actor).
+- [ ] Captions hardcoded con Monocraft a 72 px, contorno negro 4 px.
+
+## Estilo visual
+
+- Paleta: `#1A1E2E` (noche Minecraft) + `#F5C542` (daemon dorado) + `#7EC0EE` (cielo).
+- Transiciones duras tipo corte, sin crossfades salvo en FRAME E.
+- Textos centrados en tercio superior para no tapar gameplay.
+- Respetar `prefers-reduced-motion` en cualquier mockup web.
+
+## KPIs objetivo
+
+- Retention D3 (primeros 3 s): ≥ 75%.
+- Retention D15: ≥ 55%.
+- CTR a dominio desde bio / tarjeta final: ≥ 3%.
+- Save / share ratio: ≥ 4% (padres comparten a otros padres).
 
 ---
 
-## FRAME 9 (0:50 – 0:60)
-**Visual**: Fondo void (#0B0C15). Logo DaemonCraft centrado. Glow pulsa.
-**Texto en pantalla**:
-"Invocá tu daemon"
-"daemoncraft.ai"
-**Voiceover**: "DaemonCraft. Un daemon vive en tu servidor."
-**Audio**: Último acorde. Fade out.
-
----
-
-## NOTAS DE PRODUCCIÓN
-
-### Recursos necesarios:
-- [ ] Grabación de gameplay Minecraft (1080p, 60fps)
-- [ ] Skin personalizado para Daemon (naranja/cyan, estética tech)
-- [ ] Mockup de Telegram (mensajes estáticos o animados)
-- [ ] Logo animado (pulsar glow)
-- [ ] Música royalty-free (epidemicsound.com o artlist.io)
-- [ ] Voiceover (ElevenLabs o actor)
-
-### Estilo visual:
-- Paleta oscura dominante
-- Acentos naranja (#FF5722) y cyan (#00E5FF)
-- Transiciones rápidas pero suaves
-- Texto minimalista, fuente Monocraft o similar
-
-### Variantes:
-- **15s**: Frames 2, 4, 7, 9 solamente. Para ads.
-- **30s**: Frames 1-5, 7, 9. Para TV digital.
-- **60s**: Versión completa. Para web y YouTube.
-
----
-
-*Video script — DaemonCraft / AlterMundi — Abril 2026*
+*DaemonCraft · AlterMundi · Abril 2026*

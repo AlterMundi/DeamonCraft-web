@@ -1,11 +1,12 @@
 ---
+const base = import.meta.env.BASE_URL;
 const links = [
-  { href: '#companeros',    label: 'Entidades' },
-  { href: '#como-funciona', label: 'Cómo funciona' },
-  { href: '#precios',       label: 'Precios' },
-  { href: '#padres',        label: 'Padres' },
-  { href: 'blog',           label: 'Blog' },
-  { href: 'dashboard',      label: 'Dashboard' },
+  { href: `${base}#companeros`,    label: 'Entidades' },
+  { href: `${base}#como-funciona`, label: 'Cómo funciona' },
+  { href: `${base}#precios`,       label: 'Precios' },
+  { href: `${base}equipo`,         label: 'Equipo' },
+  { href: `${base}blog`,           label: 'Blog' },
+  { href: `${base}pitch-deck`,     label: 'Pitch Deck' },
 ];
 ---
 <nav class="relative z-30 container-narrow flex items-center justify-between py-5">
@@ -29,7 +30,7 @@ const links = [
     ))}
   </div>
 
-  <a href="#crowdfunding" class="btn-mc btn-mc-daemon !py-2 !px-4 !text-[10px]">
+  <a href={`${base}pitch-deck#crowdfunding`} class="btn-mc btn-mc-gold !py-2 !px-4 !text-[10px]">
     Invocar
   </a>
 </nav>

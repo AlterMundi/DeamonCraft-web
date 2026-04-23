@@ -1,0 +1,314 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const nombre = [
+  {
+    clave: 'Técnica',
+    icono: '⚙',
+    texto: 'En Unix, un <strong>daemon</strong> es un proceso persistente que corre en segundo plano. Nunca duerme. Siempre escucha. Eso hace nuestro agente dentro del servidor.',
+  },
+  {
+    clave: 'Mitología',
+    icono: '✶',
+    texto: 'El <strong>daemon</strong> de Sócrates era un espíritu guía, una voz interior. <strong>Hermes</strong>, mensajero de los dioses, conecta mundos. Nuestro agente conecta Minecraft con el mundo real: padres, educadores, familias.',
+  },
+  {
+    clave: 'Gaming',
+    icono: '▲',
+    texto: '<strong>Daemon</strong> vive en Doom, Warhammer 40K, Diablo: entidades poderosas, persistentes, memorables. <strong>Craft</strong> viene de Minecraft y también de <em>craftsmanship</em>, <em>witchcraft</em>, <em>aircraft</em>: oficio, magia y autonomía.',
+  },
+];
+
+const capas = [
+  {
+    n: '01',
+    titulo: 'El Cuerpo',
+    stack: 'Mineflayer · Node.js',
+    descripcion: 'Un avatar real dentro del mundo. Se conecta al servidor Java o Bedrock como cualquier jugador. Camina, mina, construye, pelea, pone antorchas.',
+  },
+  {
+    n: '02',
+    titulo: 'La Conciencia',
+    stack: 'LLM · Vector DB',
+    descripcion: 'Memoria persistente entre sesiones, razonamiento sobre el estado del mundo, personalidades intercambiables (SOULs). Aquí vive la identidad del daemon: qué recuerda, cómo habla, cómo decide.',
+  },
+  {
+    n: '03',
+    titulo: 'El Puente',
+    stack: 'Telegram API',
+    descripcion: 'Comunicación bidireccional con padres y educadores. Reportes semanales, alertas de Guardian Mode, resúmenes de qué construyó y qué aprendió cada pibe. Privacidad por diseño: COPPA/GDPR nativos.',
+  },
+];
+
+const swarm = [
+  { nombre: 'Producto', foco: 'SOULs, roadmap, gameplay loop' },
+  { nombre: 'Marca',    foco: 'Identidad, copy, narrativa, web' },
+  { nombre: 'Growth',   foco: 'Adquisición, partnerships, PR' },
+  { nombre: 'Tech',     foco: 'Backend, IA, infra, seguridad' },
+  { nombre: 'Comunidad',foco: 'Discord, beta testers, soporte' },
+  { nombre: 'Orq',      foco: 'Sincronización entre agentes' },
+];
+
+const decisiones = [
+  { tema: 'LLM principal',   opciones: 'OpenAI · Anthropic · Mistral · mix multi-provider' },
+  { tema: 'Protocolo MC',    opciones: 'Mineflayer · MCPI · plugin propio' },
+  { tema: 'Infra',           opciones: 'AWS · GCP · Vercel/Modal · bare metal AlterMundi' },
+  { tema: 'Memoria',         opciones: 'Vector DB (recuerdos) + PostgreSQL (estado) + Redis (caché)' },
+  { tema: 'Multi-tenant',    opciones: 'Instancia privada por familia — datos jamás se cruzan' },
+  { tema: 'Compliance',      opciones: 'COPPA + GDPR desde el día uno, no como add-on' },
+];
+---
+
+<Layout
+  title="Equipo · DaemonCraft"
+  description="Quiénes somos, por qué DaemonCraft se llama así, y cuál es el desafío técnico de meter un agente autónomo de IA dentro de Minecraft."
+>
+  <main class="bg-sky min-h-screen">
+    <Nav />
+
+    <!-- ═══════ HERO ═══════ -->
+    <header class="relative pt-20 pb-20 overflow-hidden">
+      <div class="absolute inset-x-0 bottom-0 h-10 bg-grass" style="box-shadow: inset 0 -4px 0 0 #5A7F3A, inset 0 4px 0 0 #94C95C;"></div>
+      <div class="relative container-narrow text-center">
+        <div class="inline-flex items-center gap-2 bg-cream/90 border-2 border-ink/20 px-3 py-1.5 shadow-pixel mb-6">
+          <span class="w-2 h-2 bg-hermes animate-pulse"></span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-ink">El equipo detrás del daemon</span>
+        </div>
+        <h1 class="h-display text-mc text-cream mb-5">
+          Somos <span class="text-hermes">AlterMundi</span>.<br/>
+          Construimos un <span class="text-hermes">daemon</span>.
+        </h1>
+        <p class="font-sans text-lg md:text-xl text-cream/90 max-w-2xl mx-auto leading-relaxed bg-ink/40 border-2 border-ink/60 p-5 shadow-pixel">
+          14 años de tecnología soberana en Latinoamérica.
+          Redes comunitarias, software libre, IA con control sobre los datos.
+          DaemonCraft es la próxima puerta.
+        </p>
+      </div>
+    </header>
+
+    <!-- ═══════ ORIGEN DEL NOMBRE ═══════ -->
+    <section class="py-24 bg-dirt text-cream relative overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, #6B4423 2px, transparent 3px), radial-gradient(circle at 70% 60%, #6B4423 2px, transparent 3px); background-size: 80px 80px;"></div>
+
+      <div class="relative container-narrow">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <div class="entity-tag inline-block bg-hermes text-ink font-display text-[10px] px-3 py-1.5 border-2 border-hermes-dark mb-5">
+            EL NOMBRE
+          </div>
+          <h2 class="h-display text-mc text-cream mb-5">
+            Una palabra que cruza <span class="text-hermes">tres mundos</span>.
+          </h2>
+          <p class="font-sans text-cream/90 text-lg leading-relaxed">
+            "Daemon" convive en <strong class="text-hermes">ingeniería</strong>,
+            <strong class="text-hermes">mitología</strong> y <strong class="text-hermes">gaming</strong>
+            al mismo tiempo. Por eso lo elegimos.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {nombre.map((n) => (
+            <article class="mc-card !bg-cream text-ink">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 bg-hermes border-2 border-hermes-dark flex items-center justify-center font-display text-lg text-ink" style="box-shadow: inset 0 -3px 0 0 #C79A1E, inset 0 3px 0 0 #FCDC6E;">
+                  {n.icono}
+                </div>
+                <h3 class="font-display text-xs uppercase tracking-widest text-hermes-dark">{n.clave}</h3>
+              </div>
+              <p class="font-sans text-sm leading-relaxed text-ink/80" set:html={n.texto}></p>
+            </article>
+          ))}
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-12 bg-ink/40 border-2 border-cream/20 p-6 shadow-pixel">
+          <p class="font-mono text-xs text-cream/70 mb-2">Y "CRAFT" →</p>
+          <p class="font-sans text-cream leading-relaxed">
+            Viene de <strong class="text-hermes">Minecraft</strong>, <em>craftsmanship</em> (artesanía),
+            <em>witchcraft</em> (magia) y <em>aircraft</em> (autonomía).
+            DaemonCraft: un espíritu persistente, hecho con oficio, que vuela por cuenta propia dentro del mundo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ DESAFÍO TÉCNICO ═══════ -->
+    <section class="py-24 bg-sky">
+      <div class="container-narrow">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <div class="inline-flex items-center gap-2 bg-cream/90 border-2 border-ink/20 px-3 py-1.5 shadow-pixel mb-5">
+            <span class="w-2 h-2 bg-hermes animate-pulse"></span>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-ink">El desafío técnico</span>
+          </div>
+          <h2 class="h-display text-mc text-cream mb-5">
+            Un <span class="text-hermes">agente real</span><br/>dentro de Minecraft.
+          </h2>
+          <p class="font-sans text-ink text-lg leading-relaxed bg-cream/90 border-2 border-ink/20 p-5 shadow-pixel">
+            DaemonCraft es un proceso <em>daemon</em> que se conecta al servidor como jugador,
+            razona con un LLM, recuerda entre sesiones y reporta a quien corresponde.
+            Tres capas funcionando a la vez.
+          </p>
+        </div>
+
+        <!-- Las tres capas -->
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
+          {capas.map((c) => (
+            <article class="mc-card group hover:border-hermes/60 transition-colors">
+              <div class="flex items-baseline justify-between mb-3">
+                <span class="font-display text-3xl text-hermes-dark">{c.n}</span>
+                <span class="font-mono text-[10px] text-ink/50 uppercase tracking-widest">{c.stack}</span>
+              </div>
+              <h3 class="font-serif font-bold text-2xl text-ink mb-3">{c.titulo}</h3>
+              <p class="font-sans text-sm text-ink/80 leading-relaxed">{c.descripcion}</p>
+            </article>
+          ))}
+        </div>
+
+        <!-- Diagrama ASCII del swarm -->
+        <div class="max-w-5xl mx-auto mb-16">
+          <h3 class="h-display text-center text-mc text-cream mb-2 text-2xl md:text-3xl">
+            Trabajamos en <span class="text-hermes">paralelo</span>.
+          </h3>
+          <p class="font-sans text-ink/80 text-center max-w-2xl mx-auto mb-8 bg-cream/80 border-2 border-ink/20 p-3 shadow-pixel">
+            Un swarm de agentes especializados avanza en simultáneo, con puntos de sincronización claros.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {swarm.map((s) => (
+              <div class="bg-cream border-4 border-ink/20 p-4" style="box-shadow: inset 0 -4px 0 0 rgba(0,0,0,0.15), inset 0 4px 0 0 rgba(255,255,255,0.5), 4px 4px 0 0 rgba(0,0,0,0.2);">
+                <div class="font-display text-xs text-hermes-dark uppercase tracking-widest mb-1">Agente {s.nombre}</div>
+                <div class="font-sans text-sm text-ink/80">{s.foco}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Decisiones técnicas abiertas -->
+        <div class="max-w-4xl mx-auto">
+          <h3 class="h-display text-mc text-cream mb-5 text-2xl md:text-3xl text-center">
+            Frentes <span class="text-hermes">abiertos</span>.
+          </h3>
+          <p class="font-sans text-ink text-center max-w-2xl mx-auto mb-8 bg-cream/80 border-2 border-ink/20 p-3 shadow-pixel">
+            Los caminos que estamos eligiendo ahora mismo.
+          </p>
+          <div class="space-y-3">
+            {decisiones.map((d) => (
+              <div class="bg-cream border-l-4 border-hermes p-4 shadow-pixel flex flex-col md:flex-row md:items-center md:gap-6">
+                <div class="font-display text-[10px] uppercase tracking-widest text-hermes-dark md:w-48 mb-1 md:mb-0">
+                  {d.tema}
+                </div>
+                <div class="font-sans text-sm text-ink/80">{d.opciones}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ EQUIPO HUMANO ═══════ -->
+    <section class="py-24 bg-grass-dark text-cream relative">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="container-narrow">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+          <div class="entity-tag inline-block bg-hermes text-ink font-display text-[10px] px-3 py-1.5 border-2 border-hermes-dark mb-5">
+            QUIÉNES ESTAMOS
+          </div>
+          <h2 class="h-display text-mc text-cream mb-5">
+            <span class="text-hermes">AlterMundi</span>
+          </h2>
+          <p class="font-sans text-cream/90 text-lg leading-relaxed">
+            Una comunidad técnica con más de una década construyendo redes, herramientas
+            y software libre en Latinoamérica. DaemonCraft es nuestro próximo capítulo.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto mb-12">
+          <article class="mc-card !bg-cream text-ink">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-14 h-14 bg-grass border-2 border-grass-dark flex items-center justify-center font-display text-xl text-cream" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;">
+                AM
+              </div>
+              <div>
+                <div class="font-serif font-bold text-xl text-ink">AlterMundi</div>
+                <div class="font-mono text-[10px] text-ink/60 uppercase tracking-widest">Colectivo técnico · 2012</div>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 font-sans text-sm text-ink/80 leading-relaxed">
+              <p>
+                Arrancamos en 2012 armando redes comunitarias con hardware libre.
+                Después vino soberanía de datos, infraestructura propia y, ahora,
+                agentes de IA entrenados con control sobre el contexto.
+              </p>
+              <p>
+                Un equipo multidisciplinario con devs full-stack, ML engineers,
+                diseño y comunidad. DaemonCraft se construye dentro de ese swarm,
+                con la misma filosofía: software libre, datos soberanos, comunidad primero.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Roles buscados -->
+        <div class="max-w-4xl mx-auto bg-ink/40 border-2 border-cream/20 p-6 shadow-pixel">
+          <h3 class="font-display text-xs uppercase tracking-widest text-hermes mb-4">Sumamos camada · Roles abiertos</h3>
+          <div class="grid md:grid-cols-2 gap-3">
+            {[
+              { rol: 'Lead Developer / AI Engineer', dedic: 'Full-time · Crítica' },
+              { rol: 'DevOps / Backend',             dedic: 'Part-time · Alta' },
+              { rol: 'Frontend Developer',           dedic: 'Part-time · Alta' },
+              { rol: 'Community Manager',            dedic: 'Part-time · Media' },
+              { rol: 'Advisor EdTech',               dedic: 'Asesoría · Media' },
+              { rol: 'Advisor Gaming',               dedic: 'Asesoría · Media' },
+            ].map((r) => (
+              <div class="bg-cream/10 border-l-4 border-hermes p-3">
+                <div class="font-sans font-bold text-cream text-sm">{r.rol}</div>
+                <div class="font-mono text-[10px] text-cream/60 uppercase tracking-wider">{r.dedic}</div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-6 text-center">
+            <a href="mailto:hola@altermundi.net?subject=Sumarme%20a%20DaemonCraft" class="btn-mc btn-mc-gold !text-xs">
+              Escribir a la camada →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ CTA FINAL ═══════ -->
+    <section class="py-16 bg-sky text-center">
+      <div class="container-narrow">
+        <p class="font-mono text-xs uppercase tracking-widest text-ink/70 mb-3">Siguiente puerta</p>
+        <h2 class="h-display text-mc text-ink mb-6">
+          Leé el <span class="text-hermes-dark">pitch deck</span> completo.
+        </h2>
+        <a href={`${import.meta.env.BASE_URL}pitch-deck`} class="btn-mc btn-mc-gold !text-sm !px-8 !py-4">
+          Ver pitch deck & seed round →
+        </a>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced) {
+    document.querySelectorAll('section').forEach((section) => {
+      gsap.from(section.querySelectorAll('.mc-card, .h-display, .btn-mc, article'), {
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'back.out(1.4)',
+        stagger: 0.08,
+        scrollTrigger: { trigger: section, start: 'top 85%' },
+      });
+    });
+  }
+</script>

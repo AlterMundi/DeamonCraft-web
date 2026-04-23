@@ -1,0 +1,562 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/sections/Footer.astro';
+
+const slides = [
+  {
+    n: '01',
+    kicker: 'Portada',
+    titulo: 'DaemonCraft',
+    subtitulo: 'El primer agente autónomo de IA que habita servidores de Minecraft.',
+    bullets: [
+      '500+ daemons activos',
+      '12.000 usuarios en lista de espera',
+      '$0 → $5 → $15 → $99/mes',
+      'Seed: $450K · 18 meses de runway',
+    ],
+  },
+  {
+    n: '02',
+    kicker: 'El Problema',
+    titulo: 'Los padres quieren saber qué pasa cuando sus hijos juegan Minecraft.',
+    bullets: [
+      '140M+ jugadores activos mensuales',
+      '60% son menores de 18 años',
+      'El mayor miedo es la opacidad, no el tiempo de pantalla',
+      'Las alternativas son invasivas, aburridas o sin memoria',
+    ],
+    cierre: 'Necesitan un testigo confiable adentro del juego.',
+  },
+  {
+    n: '03',
+    kicker: 'La Solución',
+    titulo: 'Un daemon vive en tu servidor.',
+    bullets: [
+      'Habita el servidor 24/7 como proceso daemon',
+      'Juega de verdad: mina, construye, pelea, conversa',
+      'Recuerda todo: miedos, libros favoritos, estilo de juego',
+      'Protege con Guardian Mode en servidores públicos',
+      'Reporta resúmenes semanales a padres vía Telegram',
+    ],
+    cierre: 'Una entidad que ya está ahí, con nombre propio.',
+  },
+];
+
+const arquitectura = [
+  { capa: 'El Cuerpo',      tech: 'Mineflayer · Node.js', funcion: 'Avatar en Minecraft: camina, mina, construye, pelea' },
+  { capa: 'La Conciencia',  tech: 'LLM + Vector DB',       funcion: 'Memoria persistente, razonamiento, personalidad' },
+  { capa: 'El Puente',      tech: 'Telegram API',          funcion: 'Comunicación bidireccional con padres' },
+];
+
+const pricing = [
+  { tier: 'Free',       precio: '$0',       target: 'Prueba, 1 perfil, 100 acciones/día',   color: 'stone' },
+  { tier: 'Companion',  precio: '$5/mes',   target: 'Familias, 3 perfiles, ilimitado',       color: 'grass' },
+  { tier: 'Creator',    precio: '$15/mes',  target: 'Power users, SOULs custom, marketplace', color: 'hermes' },
+  { tier: 'School',     precio: '$99/mes',  target: 'Instituciones, 20 perfiles, dashboard docente', color: 'wood' },
+];
+
+const mrr = [
+  { m: 'M6',  v: '$2K' },
+  { m: 'M9',  v: '$12K' },
+  { m: 'M12', v: '$35K' },
+  { m: 'M18', v: '$80K' },
+];
+
+const traccion = [
+  { metric: '500+',    label: 'daemons activos' },
+  { metric: '12.000',  label: 'waitlist' },
+  { metric: '78%',     label: 'retention M1 (Companion)' },
+  { metric: '42',      label: 'NPS' },
+];
+
+const canales = [
+  { nombre: 'Orgánico',     pct: '60%', detalle: 'Reddit, TikTok, word-of-mouth' },
+  { nombre: 'Paid',         pct: '20%', detalle: 'X/Twitter ads a padres tech' },
+  { nombre: 'Partnerships', pct: '20%', detalle: 'Escuelas, creadores Minecraft' },
+];
+
+const mercado = [
+  { tipo: 'TAM', valor: '$15B',  foco: 'EdTech + Gaming parental tools global' },
+  { tipo: 'SAM', valor: '$2.1B', foco: 'Familias con hijos gamers 6-14 años en LATAM/EU/NA' },
+  { tipo: 'SOM', valor: '$45M',  foco: 'Early adopters tech-aware, Minecraft-first, Telegram users' },
+];
+
+const tendencias = [
+  'Explosión de agents AI (2024–2026)',
+  'Demanda de "visibilidad sin invasión" de padres millennial',
+  'Minecraft sigue creciendo: +25% MAU YoY',
+  'COPPA/GDPR hacen inviables las soluciones corporate de tracking',
+];
+
+const competencia = [
+  { feature: 'En el juego',            ctrl: '❌', ai: '❌', mod: '✅', dc: '✅' },
+  { feature: 'Memoria persistente',    ctrl: '❌', ai: '❌', mod: '❌', dc: '✅' },
+  { feature: 'Comunicación natural',   ctrl: '❌', ai: '✅', mod: '❌', dc: '✅' },
+  { feature: 'Privacidad by design',   ctrl: '❌', ai: '❌', mod: '✅', dc: '✅' },
+  { feature: 'Precio accesible',       ctrl: '✅', ai: '❌', mod: '✅', dc: '✅' },
+];
+
+const moat = [
+  'Datos de memoria acumulados (más tiempo = más valor)',
+  'Comunidad de creators (marketplace de SOULs)',
+  'Soberanía tecnológica como diferenciador ético',
+];
+
+const uso = [
+  { area: 'Producto & Ingeniería', pct: '45%', detalle: '2 devs adicionales, infraestructura' },
+  { area: 'Growth & Marketing',    pct: '25%', detalle: 'Paid acquisition, contenido, comunidad' },
+  { area: 'Operaciones',           pct: '20%', detalle: 'Legal, compliance, soporte' },
+  { area: 'Reserva',               pct: '10%', detalle: 'Oportunidades y contingencias' },
+];
+
+const hitos = [
+  { plazo: '6 meses',  items: ['2.000 familias activas', '$2K MRR', '5 pilots School tier'] },
+  { plazo: '12 meses', items: ['10.000 familias', '$35K MRR', 'Marketplace de SOULs activo', 'Serie A ready'] },
+  { plazo: '24 meses', items: ['50.000 familias', '$200K MRR', 'Expansión a Roblox y Fortnite Creative'] },
+];
+---
+
+<Layout
+  title="Pitch Deck · DaemonCraft Seed Round"
+  description="Pitch deck completo de DaemonCraft. Problema, solución, arquitectura, tracción, mercado, competencia, equipo, uso de fondos y crowdfunding del seed round."
+>
+  <main class="bg-sky min-h-screen">
+    <Nav />
+
+    <!-- ═══════ PORTADA ═══════ -->
+    <header class="relative pt-20 pb-16 overflow-hidden">
+      <div class="absolute inset-x-0 bottom-0 h-10 bg-grass" style="box-shadow: inset 0 -4px 0 0 #5A7F3A, inset 0 4px 0 0 #94C95C;"></div>
+      <div class="relative container-narrow text-center">
+        <div class="inline-flex items-center gap-2 bg-cream/90 border-2 border-ink/20 px-3 py-1.5 shadow-pixel mb-6">
+          <span class="w-2 h-2 bg-hermes animate-pulse"></span>
+          <span class="font-mono text-[10px] uppercase tracking-widest text-ink">Seed Round · Abril 2026 · AlterMundi</span>
+        </div>
+        <h1 class="h-display text-mc text-cream mb-5">
+          Pitch Deck <span class="text-hermes">DaemonCraft</span>
+        </h1>
+        <p class="font-sans text-lg md:text-xl text-cream/90 max-w-2xl mx-auto leading-relaxed bg-ink/40 border-2 border-ink/60 p-5 shadow-pixel">
+          Un daemon vive en tu servidor de Minecraft.
+          13 slides: momento, equipo, arquitectura, $450K.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="#crowdfunding" class="btn-mc btn-mc-gold !text-xs">Ir al seed round ↓</a>
+          <a href={`${import.meta.env.BASE_URL}equipo`} class="btn-mc btn-mc-wood !text-xs">Conocer al equipo →</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══════ SLIDES 1-3 (intro) ═══════ -->
+    <section class="py-16 bg-dirt text-cream relative overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, #6B4423 2px, transparent 3px), radial-gradient(circle at 70% 60%, #6B4423 2px, transparent 3px); background-size: 80px 80px;"></div>
+
+      <div class="relative container-narrow space-y-12">
+        {slides.map((s) => (
+          <article class="mc-card !bg-cream text-ink max-w-4xl mx-auto">
+            <div class="flex items-baseline justify-between mb-4">
+              <span class="font-display text-3xl md:text-4xl text-hermes-dark">SLIDE {s.n}</span>
+              <span class="font-mono text-[10px] uppercase tracking-widest text-ink/60">{s.kicker}</span>
+            </div>
+            <h2 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 leading-snug">{s.titulo}</h2>
+            {s.subtitulo && (
+              <p class="font-sans text-lg text-ink/80 mb-4 italic">{s.subtitulo}</p>
+            )}
+            <ul class="space-y-2">
+              {s.bullets.map((b) => (
+                <li class="flex gap-3 font-sans text-ink/80 text-sm md:text-base">
+                  <span class="flex-shrink-0 w-4 h-4 bg-hermes border-2 border-hermes-dark mt-1" style="box-shadow: inset 0 -2px 0 0 #C79A1E;"></span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+            {s.cierre && (
+              <div class="mt-5 border-l-4 border-hermes bg-hermes/10 p-3 font-serif font-bold text-ink">
+                {s.cierre}
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 4: Demo ═══════ -->
+    <section class="py-20 bg-sky">
+      <div class="container-narrow max-w-4xl">
+        <div class="text-center mb-8">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 04</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-ink mt-2">Producto Demo</div>
+        </div>
+        <div class="mc-card text-center">
+          <div class="aspect-video bg-ink border-4 border-ink/80 flex items-center justify-center mb-6" style="box-shadow: inset 0 0 40px rgba(245,197,66,0.1);">
+            <div class="text-center">
+              <div class="font-display text-5xl text-hermes/60 mb-2">▶</div>
+              <div class="font-mono text-xs text-cream/50 uppercase tracking-widest">Video demo · 30s</div>
+            </div>
+          </div>
+          <div class="text-left space-y-3">
+            <p class="font-serif text-lg text-ink"><strong class="text-hermes-dark">"Hey Daemon, build a castle with me."</strong></p>
+            <p class="font-sans text-ink/80">El daemon aparece, conversa, construye.</p>
+            <p class="font-sans text-ink/80 italic bg-hermes/10 border-l-4 border-hermes p-3">
+              Ese mismo día, el padre recibe por Telegram: "Hoy Valen construyó un castillo y resolvió 3 problemas de simetría."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 5: Arquitectura ═══════ -->
+    <section class="py-20 bg-dirt text-cream relative overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="relative container-narrow max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 05</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream/70 mt-2">Arquitectura Técnica</div>
+          <h2 class="h-display text-cream text-mc mt-4">Tres <span class="text-hermes">capas</span>.</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+          {arquitectura.map((a, i) => (
+            <article class="mc-card !bg-cream text-ink">
+              <div class="font-display text-2xl text-hermes-dark mb-2">0{i + 1}</div>
+              <h3 class="font-serif font-bold text-xl text-ink mb-1">{a.capa}</h3>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-ink/60 mb-3">{a.tech}</div>
+              <p class="font-sans text-sm text-ink/80 leading-relaxed">{a.funcion}</p>
+            </article>
+          ))}
+        </div>
+        <div class="max-w-3xl mx-auto mt-8 bg-ink/40 border-2 border-cream/20 p-5 shadow-pixel">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-hermes mb-2">Ventaja técnica</p>
+          <p class="font-sans text-cream leading-relaxed">
+            Instancia privada por familia. Los datos nunca salen del entorno controlado.
+            COPPA y GDPR nativos, no atornillados después.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 6: Modelo de negocio ═══════ -->
+    <section class="py-20 bg-sky">
+      <div class="container-narrow max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 06</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-ink mt-2">Modelo de Negocio</div>
+          <h2 class="h-display text-cream text-mc mt-4">Cuatro <span class="text-hermes">tiers</span>.</h2>
+        </div>
+        <div class="grid md:grid-cols-4 gap-4 mb-10">
+          {pricing.map((p) => (
+            <article class="mc-card text-center">
+              <div class={`font-display text-[10px] uppercase tracking-widest mb-2 ${p.color === 'hermes' ? 'text-hermes-dark' : p.color === 'grass' ? 'text-grass-dark' : p.color === 'wood' ? 'text-wood-dark' : 'text-stone-dark'}`}>{p.tier}</div>
+              <div class="font-display text-2xl text-ink mb-3">{p.precio}</div>
+              <div class="font-sans text-xs text-ink/70 leading-relaxed">{p.target}</div>
+            </article>
+          ))}
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-ink/70 text-center mb-4">MRR proyectado</p>
+          <div class="grid grid-cols-4 gap-3">
+            {mrr.map((m) => (
+              <div class="bg-cream border-4 border-ink/20 p-4 text-center" style="box-shadow: inset 0 -3px 0 0 rgba(0,0,0,0.2), inset 0 3px 0 0 rgba(255,255,255,0.5), 4px 4px 0 0 rgba(0,0,0,0.3);">
+                <div class="font-display text-lg md:text-2xl text-hermes-dark">{m.v}</div>
+                <div class="font-mono text-[9px] uppercase tracking-widest text-ink/60">{m.m}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 7: Tracción ═══════ -->
+    <section class="py-20 bg-grass-dark text-cream relative">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="container-narrow max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 07</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream/70 mt-2">Tracción & Métricas</div>
+          <h2 class="h-display text-cream text-mc mt-4">Ya está <span class="text-hermes">pasando</span>.</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 max-w-4xl mx-auto">
+          {traccion.map((t) => (
+            <div class="bg-cream border-4 border-ink/20 p-4 text-center" style="box-shadow: inset 0 -3px 0 0 rgba(0,0,0,0.2), inset 0 3px 0 0 rgba(255,255,255,0.5), 4px 4px 0 0 rgba(0,0,0,0.4);">
+              <div class="font-display text-2xl md:text-3xl text-hermes-dark mb-1">{t.metric}</div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-ink/60">{t.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-ink/40 border-2 border-cream/20 p-5 shadow-pixel">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-hermes mb-4">Canales de adquisición</p>
+          <div class="space-y-2">
+            {canales.map((c) => (
+              <div class="flex items-center gap-4">
+                <div class="font-display text-xs text-cream w-28">{c.nombre}</div>
+                <div class="flex-1 bg-cream/10 h-2 relative">
+                  <div class="absolute inset-y-0 left-0 bg-hermes" style={`width: ${c.pct}`}></div>
+                </div>
+                <div class="font-display text-xs text-hermes w-10 text-right">{c.pct}</div>
+                <div class="font-sans text-xs text-cream/70 hidden md:block w-64">{c.detalle}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 8: Mercado ═══════ -->
+    <section class="py-20 bg-sky">
+      <div class="container-narrow max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 08</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-ink mt-2">Mercado</div>
+          <h2 class="h-display text-cream text-mc mt-4">TAM · SAM · <span class="text-hermes">SOM</span></h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5 mb-10">
+          {mercado.map((m) => (
+            <article class="mc-card text-center">
+              <div class="font-display text-xs uppercase tracking-widest text-hermes-dark mb-2">{m.tipo}</div>
+              <div class="font-display text-3xl md:text-4xl text-ink mb-3">{m.valor}</div>
+              <p class="font-sans text-sm text-ink/80 leading-relaxed">{m.foco}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="max-w-3xl mx-auto mc-card">
+          <p class="font-display text-[10px] uppercase tracking-widest text-hermes-dark mb-3">Tendencias a favor</p>
+          <ul class="space-y-2">
+            {tendencias.map((t) => (
+              <li class="flex gap-3 text-ink/80 text-sm">
+                <span class="flex-shrink-0 w-3 h-3 bg-hermes mt-1.5"></span>
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 9: Competencia ═══════ -->
+    <section class="py-20 bg-dirt text-cream relative overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="relative container-narrow max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 09</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream/70 mt-2">Competencia</div>
+          <h2 class="h-display text-cream text-mc mt-4">Nadie hace las <span class="text-hermes">cinco</span> cosas.</h2>
+        </div>
+
+        <div class="bg-cream border-4 border-ink/20 overflow-x-auto" style="box-shadow: 4px 4px 0 0 rgba(0,0,0,0.3);">
+          <table class="w-full min-w-[600px] text-left">
+            <thead class="bg-ink text-cream">
+              <tr>
+                <th class="font-display text-[10px] uppercase tracking-widest p-3"></th>
+                <th class="font-display text-[10px] uppercase tracking-widest p-3">Control parental</th>
+                <th class="font-display text-[10px] uppercase tracking-widest p-3">AI Tutoring</th>
+                <th class="font-display text-[10px] uppercase tracking-widest p-3">MC Mods</th>
+                <th class="font-display text-[10px] uppercase tracking-widest p-3 bg-hermes text-ink">DaemonCraft</th>
+              </tr>
+            </thead>
+            <tbody>
+              {competencia.map((c, i) => (
+                <tr class={i % 2 ? 'bg-ink/5' : ''}>
+                  <td class="font-mono text-xs text-ink p-3">{c.feature}</td>
+                  <td class="text-center text-lg p-3">{c.ctrl}</td>
+                  <td class="text-center text-lg p-3">{c.ai}</td>
+                  <td class="text-center text-lg p-3">{c.mod}</td>
+                  <td class="text-center text-lg p-3 bg-hermes/20 font-bold">{c.dc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-8 bg-ink/40 border-2 border-cream/20 p-5 shadow-pixel">
+          <p class="font-mono text-[10px] uppercase tracking-widest text-hermes mb-3">Nuestro moat</p>
+          <ul class="space-y-2">
+            {moat.map((m) => (
+              <li class="flex gap-3 text-cream text-sm">
+                <span class="flex-shrink-0 w-3 h-3 bg-hermes mt-1.5"></span>
+                <span>{m}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 10: Equipo ═══════ -->
+    <section class="py-20 bg-sky">
+      <div class="container-narrow max-w-4xl text-center">
+        <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 10</span>
+        <div class="font-mono text-[10px] uppercase tracking-widest text-ink mt-2">Equipo</div>
+        <h2 class="h-display text-cream text-mc mt-4 mb-8">
+          <span class="text-hermes">AlterMundi</span> · 14 años de tech soberana.
+        </h2>
+        <div class="mc-card text-left max-w-2xl mx-auto mb-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-14 h-14 bg-grass border-2 border-grass-dark flex items-center justify-center font-display text-xl text-cream" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;">AM</div>
+            <div>
+              <div class="font-serif font-bold text-lg text-ink">AlterMundi</div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-ink/60">Colectivo técnico desde 2012</div>
+            </div>
+          </div>
+          <p class="font-sans text-sm text-ink/80 leading-relaxed">
+            Construimos redes comunitarias, herramientas de software libre y,
+            ahora, agentes de IA con control sobre los datos. DaemonCraft vive
+            en la misma línea: soberanía técnica y comunidad primero.
+          </p>
+        </div>
+        <p class="font-sans text-ink/80 max-w-xl mx-auto mb-2">Equipo multidisciplinario: devs full-stack, ML, diseño y comunidad.</p>
+        <p class="font-mono text-xs text-ink/60 uppercase tracking-widest">Advisors EdTech y Gaming: incorporación abierta</p>
+        <div class="mt-6">
+          <a href={`${import.meta.env.BASE_URL}equipo`} class="btn-mc btn-mc-wood !text-xs">Ver equipo completo →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 11: Uso de fondos ═══════ -->
+    <section class="py-20 bg-grass-dark text-cream relative">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="container-narrow max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 11</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-cream/70 mt-2">Uso de Fondos</div>
+          <h2 class="h-display text-cream text-mc mt-4">Seed <span class="text-hermes">$450K</span> · 18 meses.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-4">
+          {uso.map((u) => (
+            <article class="mc-card !bg-cream text-ink text-center">
+              <div class="font-display text-3xl text-hermes-dark mb-2">{u.pct}</div>
+              <div class="font-serif font-bold text-lg text-ink mb-2">{u.area}</div>
+              <div class="font-sans text-xs text-ink/70 leading-relaxed">{u.detalle}</div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 12: Hitos ═══════ -->
+    <section class="py-20 bg-sky">
+      <div class="container-narrow max-w-5xl">
+        <div class="text-center mb-10">
+          <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 12</span>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-ink mt-2">Próximos Hitos</div>
+          <h2 class="h-display text-cream text-mc mt-4">El plan es <span class="text-hermes">verificable</span>.</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+          {hitos.map((h) => (
+            <article class="mc-card">
+              <div class="font-display text-xs uppercase tracking-widest text-hermes-dark mb-3 border-b-2 border-hermes/30 pb-2">{h.plazo}</div>
+              <ul class="space-y-2">
+                {h.items.map((i) => (
+                  <li class="flex gap-2 text-ink/80 text-sm">
+                    <span class="flex-shrink-0 w-3 h-3 bg-hermes mt-1.5 border border-hermes-dark"></span>
+                    <span>{i}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ SLIDE 13: Cierre ═══════ -->
+    <section class="py-24 bg-ink text-cream relative overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="relative container-narrow max-w-3xl text-center">
+        <span class="font-display text-3xl md:text-4xl text-cream text-mc">SLIDE 13</span>
+        <div class="font-mono text-[10px] uppercase tracking-widest text-hermes mt-2 mb-6">Cierre</div>
+        <h2 class="h-display text-mc text-cream mb-6 leading-tight">
+          El primer <span class="text-hermes">daemon autónomo</span><br/>
+          que habita los mundos<br/>
+          de nuestros hijos —<br/>
+          y nos devuelve el hilo.
+        </h2>
+        <p class="font-serif text-xl md:text-2xl text-hermes italic mt-8">Invocá tu daemon.</p>
+      </div>
+    </section>
+
+    <!-- ═══════ CROWDFUNDING / SEED ROUND ═══════ -->
+    <section id="crowdfunding" class="relative py-24 md:py-32 bg-dirt overflow-hidden">
+      <div class="absolute top-0 inset-x-0 h-6 bg-grass" style="box-shadow: inset 0 -3px 0 0 #5A7F3A, inset 0 3px 0 0 #94C95C;"></div>
+      <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 20% 30%, #6B4423 2px, transparent 3px), radial-gradient(circle at 70% 60%, #6B4423 2px, transparent 3px), radial-gradient(circle at 40% 80%, #6B4423 2px, transparent 3px); background-size: 80px 80px;"></div>
+
+      <div class="relative container-narrow">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <div class="inline-block mb-5">
+            <div class="entity-tag bg-hermes text-ink font-display text-xs uppercase tracking-widest px-4 py-2 border-2 border-hermes-dark">
+              DAEMONCRAFT · SEED ROUND
+            </div>
+          </div>
+          <h2 class="h-display text-mc text-cream mb-6">
+            Estamos armando <span class="text-hermes">la primera camada</span> de familias.
+          </h2>
+          <p class="font-sans text-cream text-mc text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            18 meses de runway. 12.000 usuarios. 500+ agentes en vivo.
+            Un proyecto soberano de AlterMundi — sin capital de riesgo tradicional.
+            Vos podés estar desde el día uno.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mb-14">
+          {[
+            { metric: '$450K',   label: 'Seed objetivo' },
+            { metric: '10.000+', label: 'Usuarios M12' },
+            { metric: '$12K+',   label: 'MRR M9' },
+            { metric: '500+',    label: 'Agentes M6' },
+          ].map((m) => (
+            <div class="bg-cream border-4 border-ink p-4 text-center" style="box-shadow: inset 0 -3px 0 0 rgba(0,0,0,0.2), inset 0 3px 0 0 rgba(255,255,255,0.5), 4px 4px 0 0 rgba(0,0,0,0.3);">
+              <div class="font-display text-2xl md:text-3xl text-hermes-dark mb-1">{m.metric}</div>
+              <div class="font-mono text-[10px] uppercase tracking-widest text-ink/60">{m.label}</div>
+            </div>
+          ))}
+        </div>
+
+        <div class="max-w-3xl mx-auto bg-hermes border-4 border-hermes-dark p-8 md:p-10 text-center" style="box-shadow: inset 0 -4px 0 0 rgba(0,0,0,0.2), inset 0 4px 0 0 rgba(255,255,255,0.4), 8px 8px 0 0 rgba(0,0,0,0.4);">
+          <div class="font-display text-[10px] text-ink mb-3 tracking-widest">PRÓXIMO PASO</div>
+          <h3 class="font-serif font-bold text-2xl md:text-3xl text-ink mb-4 leading-snug">
+            45 minutos. Demo en vivo con agentes reales, Telegram bridge y portal entre mundos.
+          </h3>
+          <p class="text-ink/80 mb-6">
+            Si sos inversor, escuela o familia founder — agendamos la demo esta semana.
+          </p>
+          <a href="mailto:hola@altermundi.net?subject=Demo%20DaemonCraft%20Seed"
+             class="btn-mc btn-mc-wood !text-sm !px-8 !py-4">
+            Agendar demo de 45 min →
+          </a>
+          <div class="mt-5 font-mono text-xs text-ink/60">
+            AlterMundi · hola@altermundi.net · @altermundi
+          </div>
+        </div>
+
+        <p class="text-center mt-10 font-mono text-[10px] uppercase tracking-widest text-cream/70">
+          The architecture is proven · The timing is perfect · The team is ready
+        </p>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduced) {
+    document.querySelectorAll('section').forEach((section) => {
+      gsap.from(section.querySelectorAll('.mc-card, .h-display, .btn-mc, article, table'), {
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'back.out(1.4)',
+        stagger: 0.08,
+        scrollTrigger: { trigger: section, start: 'top 85%' },
+      });
+    });
+  }
+</script>
